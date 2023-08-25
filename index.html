@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+body {
+background-color: lightskyblue;
+}
+
+div.container {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 50px;
+}
+
+.answers {
+border: groove grey;
+font-size: large;
+font-family: calibri;
+height: 50px;
+width: 500px;
+margin: auto;
+background-color: white;
+}
+
+.styleButton {
+margin-top: 20px;
+height: 50px;
+width: 100px;
+font-size: medium;
+font-family: cursive;
+cursor: pointer;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+<img src="/Img/spakone.jpg" alt="spåkone">
+<h3>Hva vil denne dagen bringe? Trykk på knappen!</h3>
+<div id="generateAnswer" class="answers"></div>
+<button onclick="clickMe()" class="styleButton">Trykk her!</button>
+
+</div>
+
+<script>
+let tilfeldigSetning ='';
+let svarElement = document.getElementById('generateAnswer');
+let tilfeldigeSetninger = [
+"Ikke gå utenfor døra idag, gå og legg deg igjen!",
+"Alt kommer til å gå din vei i dag!",
+"Alt går galt. Stein i skoa, ketchupflekk på skjorta.",
+"Alt går bra! Livet smiler til deg, og du får gå tidlig fra jobb. ",
+"Alle biler kommer til å kjøre i sølepytter ved siden av deg.",
+"Sjefen ringer. Han vil sponse sydentur på deg til Granka.",
+"Du håndhilser på noen som er smittet av spysjuka.",
+"Du vinner førstepremien i Eurojackpot.",
+"Sjefen sender deg en melding der det står at dere må snakke sammen.",
+"Telefonen ringer. Du har vunnet 1 års gratis hushjelp.",
+"Du punkterer midt på E6 i rushtiden.",
+"Ingen sokker i skuffen din mangler par.",
+];
+
+function generateRandom() {
+tilfeldigSetning = tilfeldigeSetninger[Math.floor(Math.random() * tilfeldigeSetninger.length)];   //Henter random rekkefølge fra array
+svarElement.textContent = tilfeldigSetning;  //Viser den tilfeldige setningen til div-en min som heter generateAnswer. Altså ruten. 
+}
+
+function clickMe() {
+generateRandom();                //Kjører funksjonen over når knappen klikkes.
+}
+
+
+</script> 
+</body>
+</html>
